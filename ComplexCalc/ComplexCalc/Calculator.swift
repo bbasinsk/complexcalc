@@ -31,11 +31,11 @@ class Calculator {
     
     // with op
     func mathOp(lhs: Int, rhs: Int, op: (Int, Int) -> Int) -> Int {
-        return 0
+        return op(lhs, rhs)
     }
     
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
-        return 0
+        return args.reduce(beg, { op($0, $1) })
     }
     
     
