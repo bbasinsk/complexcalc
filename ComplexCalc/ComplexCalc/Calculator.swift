@@ -41,41 +41,31 @@ class Calculator {
     
     // args
     func add(_ args: [Int]) -> Int {
-        return 0
-    }
-    
-    func subtract(_ args: [Int]) -> Int {
-        return 0
+        return args.reduce(0, { $0 + $1 })
     }
     
     func multiply(_ args: [Int]) -> Int {
-        return 0
-    }
-    
-    func divide(_ args: [Int]) -> Int {
-        return 0
-    }
-    
-    func mathOp(_ args: [Int]) -> Int {
-        return 0
+        return args.reduce(1, { $0 * $1 })
     }
     
     func count(_ args: [Int]) -> Int {
-        return 0
+        return args.count
     }
     
     func avg(_ args: [Int]) -> Int {
-        return 0
+        if (args.count == 0) { return 0 }
+        let total = args.reduce(0, { $0 + $1 })
+        return total / args.count
     }
     
     
     // tuples
     func add(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (0, 0)
+        return (lhs.0 + rhs.0, lhs.1 + rhs.1)
     }
     
     func subtract(lhs: (Int, Int), rhs: (Int, Int)) -> (Int, Int) {
-        return (0, 0)
+        return (lhs.0 - rhs.0, lhs.1 - rhs.1)
     }
     
     
