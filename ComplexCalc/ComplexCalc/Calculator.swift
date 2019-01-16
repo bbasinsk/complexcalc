@@ -35,17 +35,17 @@ class Calculator {
     }
     
     func mathOp(args: [Int], beg: Int, op: (Int, Int) -> Int) -> Int {
-        return args.reduce(beg, { op($0, $1) })
+        return args.reduce(beg, { (l, r) in op(l, r) })
     }
     
     
     // args
     func add(_ args: [Int]) -> Int {
-        return args.reduce(0, { $0 + $1 })
+        return args.reduce(0, { (l, r) in l + r })
     }
     
     func multiply(_ args: [Int]) -> Int {
-        return args.reduce(1, { $0 * $1 })
+        return args.reduce(1, { (l, r) in l * r })
     }
     
     func count(_ args: [Int]) -> Int {
@@ -54,7 +54,7 @@ class Calculator {
     
     func avg(_ args: [Int]) -> Int {
         if (args.count == 0) { return 0 }
-        let total = args.reduce(0, { $0 + $1 })
+        let total = args.reduce(0, { (l, r) in l + r })
         return total / args.count
     }
     
@@ -71,10 +71,10 @@ class Calculator {
     
     // dictionaries
     func add(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
-        return ["x": 0]
+        return lhs.merging(rhs) { (l, r) in l + r }
     }
     
     func subtract(lhs: [String: Int], rhs: [String: Int]) -> [String: Int] {
-        return ["x": 0]
+        return lhs.merging(rhs) { (l, r) in l - r }
     }
 }
