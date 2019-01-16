@@ -13,19 +13,19 @@ class Calculator {
     
     // two args
     func add(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs + rhs
     }
     
     func subtract(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs - rhs
     }
     
     func multiply(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs * rhs
     }
     
     func divide(lhs: Int, rhs: Int) -> Int {
-        return 0
+        return lhs / rhs
     }
     
     
